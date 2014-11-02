@@ -1,3 +1,8 @@
-class Passenger
+# class Passenger
 
-end
+#   def touch_in
+#     (station)==1
+#   end
+
+
+# end
