@@ -3,7 +3,7 @@ class Station
   # def initialize 
   #   station
   # end
-  DEFAULT_CAPACITY = 300
+  DEFAULT_CAPACITY = 5
 
   def initialize (options = {})
     @passenger = []
@@ -11,20 +11,10 @@ class Station
     @capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
   end
 
-  def passenger_count
-    @passenger.count
-  end
 
   def capacity
-    @capacity= 300
+    @capacity= 10
   end
 
-  def touch_in(passenger)
-    @passenger << passenger
-  end
-
-  def touch_out(passenger)
-    @passenger.delete(passenger)
-  end
 
 end
