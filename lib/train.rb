@@ -7,6 +7,9 @@ class Train
     @capacity= options.fetch(:capacity, DEFAULT_CAPACITY)
   end
 
+  def capacity
+    capacity = capacity
+  end
 end
 
   
