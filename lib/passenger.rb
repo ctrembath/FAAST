@@ -1,8 +1,12 @@
 class Passenger
 
-#   def touch_in
-#     (station)==1
-#   end
+  def initialize
+    @passenger= []
+    @have_money= false
+  end
 
+  # def top_up!
+  #   @have_money= true
+  # end
 
  end

@@ -9,6 +9,7 @@ class Station
     @passenger = []
     @trains = []
     @capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
+
   end
 
   def passenger_count
@@ -26,15 +27,25 @@ class Station
 
   def touch_out!(passenger)
     @passenger.delete(passenger)
+    
   end
 
   def is_full?
     @passengers_count == @capacity
   end
 
-
-  def fill_station!(station)
-    20.times { station.touch_in!(passenger) }
+  def train_count
+    @trains.count
   end
+
+  def arrive(train)
+    @trains << train
+  end
+
+  def depart(train)
+    @trains.delete(train)
+  end
+
+
 
 end
