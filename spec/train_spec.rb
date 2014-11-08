@@ -1,24 +1,28 @@
-# require 'train'
-# require 'container
+ require 'train'
 
-#   describe Train do
+ describe Train do
 
-#       let(:train) { Train.new(:capacity => 140) }
-#       let(:passenger) { Passenger.new }
-#       let(:station) { Station.new }
-#       let(:carriage) { Carriage.new }
+      let(:train) { Train.new }
+      let(:passenger) { double :passenger }
+      let(:station) { double :station }
+      let(:carriage) { double :carriage }
 
-#     #stop to accept passengers on
-#     it "has a set number of carriages" do
-#       expect(train.capacity).to eq(140)
-#     end
 
-#     #stop to allow passengers off
+  it "should have a default capacity of 3 carriages" do
+    expect(train.capacity).to eq(4)
+  end
 
-#     #count the number of passengers getting on
+  it "should be able to add carriages" do
+    train.add_carriage(carriage)
+    expect(train.carriage_count).to eq(1)
+  end
 
-#     #count the number of passengers getting off
+  it "should be able to remove carriages" do
+    train.add_carriage(carriage)
+    expect(train.carriage_count).to eq(1)
+    train.remove_carriage(carriage)
+    expect(train.carriage_count).to eq(0)
+  end
 
-#     #stop cariages getting over capacity
 
-# end
+end
