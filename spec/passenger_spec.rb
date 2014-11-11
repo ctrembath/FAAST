@@ -3,16 +3,15 @@
 
    describe Passenger do
 
-    # let(:passenger) { Passenger.new }
-    # let(:station) { double :station} 
-    # let(:train) { double :train }
+    let(:passenger) { Passenger.new }
+    let(:station) { double :station} 
+    let(:train) { double :train }
 
+    it "should not be in station" do
+      expect(passenger.in_station).to be false
+    end
 
-    # it "can call the stations touch in method" do
-    #   expect(:station).to receive(:touch_in!)
-    #   passenger.touch_in!(:station)
-    # end
-
+ 
    # it "allows passenger to touch in" do
    #  expect(station).to receive(:touch_in!).with (passenger)
    #  passenger.touch_in!

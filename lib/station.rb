@@ -20,17 +20,16 @@ class Station
     @capacity= 10
   end
 
-  def touch_in!(passenger)
-    raise "station is full" if full?
+  def enter_station!(passenger)
     @passenger << passenger
   end
 
-  def touch_out!(passenger)
+  def leave_station!(passenger)
     @passenger.delete(passenger)
     
   end
 
-  def is_full?
+  def full
     @passengers_count == @capacity
   end
 
