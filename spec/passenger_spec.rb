@@ -7,39 +7,47 @@
     let(:station) { double :station} 
     let(:train) { double :train }
 
-    it "should not be in station" do
-      expect(passenger.in_station).to be false
+  it "should not be in station" do
+      expect(passenger.in_station?).to be false
     end
 
+  it "should enter the station" do
+      passenger.enter_station
+      expect(passenger.in_station?).to be true
+  end
  
-   # it "allows passenger to touch in" do
-   #  expect(station).to receive(:touch_in!).with (passenger)
-   #  passenger.touch_in!
-   # end
+  it "allows passenger to touch in" do
+    expect(station).to receive(:touch_in!).with (passenger)
+    station.touch_in!(passenger)
+   end
 
-  # it "allows passengers to touch in" do
-  #   station.touch_in!(passenger)
-  #   expect(:station.passenger_count).to eq(1)
-  #  end
+  it "should start with £2 credit on oyster card" do
+    expect(passenger.credit).to eq(2)
+   end
 
-  # it "allows passengers to touch out" do
-  #   station.touch_out!(passenger)
-  #   expect(station.passenger_count).to eq(0)
-  # end
+  it "should cost £1 to touch in" do
+    puts passenger.credit
+    expect{passenger.touch_in!}.to change{passenger.credit}.by(-1)
+  end
 
+  it "allows passengers to touch out" do
+    expect(station).to receive(:touch_out!).with (passenger)
+    station.touch_out!(passenger)
+  end
 
+  it "should be able to top up card" do
+    expect(passenger.credit).to eq(2)
+    passenger.top_up!(5)
+    expect(passenger.credit).to eq(7)
+  end
+
+  it "should refuse passenger if they don't have enough credit" do
+    2 .times{passenger.touch_in!}
+    expect(passenger.credit).to eq(0)
+    expect(passenger.in_station?).to be false
+  end
 
 
 end
 
-
-# Board Train at Station
-
-
-
-# Alight Train at Station
-
-
-
-# Touch Out
 
