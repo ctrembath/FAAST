@@ -29,8 +29,8 @@
   end
 
   it "allows passengers to touch out" do
-    expect(station).to receive(:touch_out!).with (passenger)
-    station.touch_out!(passenger)
+    expect(station).to receive(:alight).with (passenger)
+    station.alight(passenger)
   end
 
   it "should be able to top up card" do

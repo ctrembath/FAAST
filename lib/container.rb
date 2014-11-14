@@ -16,4 +16,8 @@ module Container
     station.enter_station(self)
   end
 
+  def alight(passenger)
+    @passengers.delete(passenger)
+  end
+
 end

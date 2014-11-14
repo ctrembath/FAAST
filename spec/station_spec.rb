@@ -20,7 +20,7 @@ require'station.rb'
 
   it "allows passengers to leave station" do
     station.enter_station(passenger)
-    station.leave_station!(passenger)
+    station.alight(passenger)
     expect(station.passenger_count).to eq(0)
   end
 
@@ -36,14 +36,5 @@ require'station.rb'
     expect(station.train_count).to eq(0)
   end
 
-
- # it "should know if it is full of passengers" do
-  #   station= Station.new
-  #   station.fill_station!
-  #   expect(station.is_full?).to be true
-
-  # end
-  #Allows trains to take passengers (-1)
-  #allow trains to deliver passengers (+1)
 end
 

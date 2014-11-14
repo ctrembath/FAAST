@@ -14,13 +14,8 @@ class Station
     @capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
   end
 
-
   def enter_station(passenger)
     @passengers << passenger
-  end
-
-  def leave_station!(passenger)
-    @passengers.delete(passenger)
   end
 
   def train_count

@@ -19,9 +19,5 @@ class Carriage
   end
 
 
-  def alight(passenger)
-    @passengers.delete(passenger)
-  end
-
 end
 
