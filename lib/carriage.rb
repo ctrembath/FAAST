@@ -6,7 +6,7 @@ class Carriage
 
   def initialize(options = {})
     @capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
-    @passenger = []
+    @passengers = []
   end
 
   def capacity
@@ -15,19 +15,19 @@ class Carriage
 
   def board_carriage(passenger)
     raise "Carriage is full!" if full?
-   @passenger << passenger
+   @passengers << passenger
   end
 
   def full?
-    @passenger.count == @capacity
+    @passengers.count == @capacity
   end
 
   def alight(passenger)
-    @passenger.delete(passenger)
+    @passengers.delete(passenger)
   end
 
   def passenger_count
-    @passenger.count
+    @passengers.count
   end
 
 

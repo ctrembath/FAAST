@@ -7,13 +7,11 @@
     let(:station) { double :station} 
     let(:train) { double :train }
 
-  it "should not be in station" do
-      expect(passenger.in_station?).to be false
-    end
+
 
   it "should enter the station" do
-      passenger.enter_station
-      expect(passenger.in_station?).to be true
+      expect(station).to receive(:enter_station)
+      passenger.enter_station(station)
   end
  
   it "allows passenger to touch in" do
@@ -44,7 +42,7 @@
   it "should refuse passenger if they don't have enough credit" do
     2 .times{passenger.touch_in!}
     expect(passenger.credit).to eq(0)
-    expect(passenger.in_station?).to be false
+    expect{passenger.touch_in!}.to raise_error(RuntimeError)
   end
 
 

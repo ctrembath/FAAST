@@ -14,12 +14,12 @@ require'station.rb'
 
   it "allows passengers to enter" do
     passenger= Passenger.new
-    station.enter_station!(passenger)
+    station.enter_station(passenger)
     expect(station.passenger_count).to eq(1)
   end
 
-  it "allows passengers to touch out" do
-    station.enter_station!(passenger)
+  it "allows passengers to leave station" do
+    station.enter_station(passenger)
     station.leave_station!(passenger)
     expect(station.passenger_count).to eq(0)
   end

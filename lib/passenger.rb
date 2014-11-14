@@ -8,13 +8,9 @@ class Passenger
 
   def touch_in!
     raise "you don't have enough money to get the train!" if credit < 1
-    @enter_station
     pay_fare!
   end
 
-  def in_station?
-    @in_station 
-  end
 
   def pay_fare!
     @credit = credit-1
@@ -25,8 +21,8 @@ class Passenger
     @in_station
   end
 
-  def enter_station
-    @in_station= true
+  def enter_station(station)
+    station.enter_station(self)
   end
 
   def credit

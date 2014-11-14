@@ -3,6 +3,8 @@ class Station
   # def initialize 
   #   station
   # end
+  attr_reader = :passenger
+  
   DEFAULT_CAPACITY = 5
 
   def initialize (options = {})
@@ -20,7 +22,7 @@ class Station
     @capacity= 10
   end
 
-  def enter_station!(passenger)
+  def enter_station(passenger)
     @passenger << passenger
   end
 
