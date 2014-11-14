@@ -3,13 +3,13 @@ require'station.rb'
 
   describe Station do
 
-    let(:station) { Station.new(:capacity => 5) }
+    let(:station) { Station.new(:capacity => 20) }
     let(:passenger) { Passenger.new}
     let(:train) {double :train}
 
 
   it "has a capacity of" do
-    expect(station.capacity).to eq(10)
+    expect(station.capacity).to eq(20)
   end
 
   it "allows passengers to enter" do

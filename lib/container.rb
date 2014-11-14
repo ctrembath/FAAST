@@ -1,19 +1,19 @@
 module Container
 
   def capacity
-    @capacity = 140
+    @capacity ||=DEFAULT_CAPACITY
   end
 
-  def touch_in
-    raise "station is full" if full?
-    passengers << passenger
-    end
-  end
-  
-  def full?
-    passenger_count == @capacity
+   def full?
+    passenger_count == capacity
   end
 
   def passenger_count
-    passengers.count
+    @passengers.count
   end
+
+  def enter_station(station)
+    station.enter_station(self)
+  end
+
+end

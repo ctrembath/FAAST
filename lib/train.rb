@@ -1,12 +1,11 @@
-class Train
+require_relative 'container'
 
+class Train
+  include Container
+  
   def initialize(capacity=4)
     @capacity = capacity
     @carriages = []
-  end
-
-  def capacity
-    @capacity
   end
 
   def carriage_count

@@ -1,3 +1,4 @@
+require 'container'
 require 'carriage.rb'
 
   describe Carriage do
@@ -20,7 +21,7 @@ require 'carriage.rb'
 
   it "should not allow any passengers in if it is over capacity" do
     fill_carriage(passenger)
-    expect{carriage.board_carriage(passenger)}.to raise_error("Carriage is full!")
+    expect{carriage.board_carriage(passenger)}.to raise_error(RuntimeError)
   end
 
   it "should allow passengers to leave carriage" do

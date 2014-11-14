@@ -1,38 +1,26 @@
+require_relative'container'
+
 class Station
 
-  # def initialize 
-  #   station
-  # end
-  attr_reader = :passenger
-  
+  include Container
+
+  attr_reader = :passengers
+
   DEFAULT_CAPACITY = 5
 
   def initialize (options = {})
-    @passenger = []
+    @passengers = []
     @trains = []
     @capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
-
   end
 
-  def passenger_count
-    @passenger.count
-  end
-
-  def capacity
-    @capacity= 10
-  end
 
   def enter_station(passenger)
-    @passenger << passenger
+    @passengers << passenger
   end
 
   def leave_station!(passenger)
-    @passenger.delete(passenger)
-    
-  end
-
-  def full
-    @passengers_count == @capacity
+    @passengers.delete(passenger)
   end
 
   def train_count
@@ -46,7 +34,5 @@ class Station
   def depart(train)
     @trains.delete(train)
   end
-
-
 
 end

@@ -11,14 +11,13 @@ class Passenger
     pay_fare!
   end
 
-
-  def pay_fare!
-    @credit = credit-1
-  end
-
   def touch_out!(passenger)
     @passenger.delete(passenger)
     @in_station
+  end
+
+  def pay_fare!
+    @credit = credit-1
   end
 
   def enter_station(station)
