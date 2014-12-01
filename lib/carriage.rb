@@ -18,6 +18,5 @@ class Carriage
    @passengers << passenger
   end
 
-
 end
 

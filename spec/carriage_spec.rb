@@ -1,5 +1,5 @@
 require 'container'
-require 'carriage.rb'
+require 'carriage'
 
   describe Carriage do
 
@@ -34,8 +34,5 @@ require 'carriage.rb'
       carriage.board_carriage(passenger)
       expect(carriage.passenger_count).to eq(1)
     end
-
-
-
 
 end

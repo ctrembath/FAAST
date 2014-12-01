@@ -7,7 +7,6 @@ require'station.rb'
     let(:passenger) { Passenger.new}
     let(:train) {double :train}
 
-
     it "has a capacity of" do
       expect(station.capacity).to eq(20)
     end
@@ -23,7 +22,6 @@ require'station.rb'
       station.alight(passenger)
       expect(station.passenger_count).to eq(0)
     end
-
 
     it "should allow trains to arrive in it" do
       station.arrive(train)
