@@ -1,5 +1,7 @@
 module Container
 
+  attr_reader :passengers
+
   def capacity
     @capacity ||=DEFAULT_CAPACITY
   end
@@ -18,6 +20,11 @@ module Container
 
   def alight(passenger)
     @passengers.delete(passenger)
+  end
+
+  def board_carriage(passenger)
+    raise "Carriage is full!" if self.full?
+    @passengers << passenger
   end
 
 end
